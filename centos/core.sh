@@ -61,7 +61,7 @@ yes | cp -f /etc/ansible/hosts $script_location/hosts
 
 ### To retrive k8s source code from Git ###
 
-#git clone https://github.com/learnitguide/kubernetes-and-ansible /etc/ansible/kubernetes-and-ansible
+#git clone https://github.com/dineshrhel/kubernetes-and-ansible.git /etc/ansible/kubernetes-and-ansible
 
 #### To update master node IP on script's env file #####
 export master_host_name=$(hostname -s)
@@ -76,6 +76,7 @@ rm -f /tmp/dummy
 #################To Execute ansible playbook for SSH passwordless and system host entry updates ####
 
 echo -e "Please type ROOT password on SSH prompt:: "
+echo ""
 
 sleep 5
 
@@ -84,7 +85,7 @@ ansible-playbook $script_location/passwordless_host-updates.yml -k
 ################# To setup Kubernetes Cluster with all prerequistes ####
 echo -e "To setup Kubernetes Cluster with all prerequistes, It takes some times, Please wait.."
 
-sleep 2
+sleep 5
 ansible-playbook $script_location/settingup_kubernetes_cluster.yml
 
 ################ To join workers nodes into Master Kubernetes Cluster ######
@@ -96,7 +97,7 @@ echo -e "To join all specified workers nodes into Master Kubernetes Cluster..."
 ansible-playbook $script_location/join_kubernetes_workers_nodes.yml
 
 printf '\n%.0s' `seq 1 5`
-
+sleep 30
 
 echo -e "Your Kubernetes Cluster setup ready!!!"
 echo ""
