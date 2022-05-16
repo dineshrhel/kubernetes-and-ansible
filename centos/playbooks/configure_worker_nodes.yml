@@ -1,0 +1,21 @@
+- hosts: kubernetes-master-nodes
+  become: yes
+  gather_facts: false
+  tasks:
+    - name: get join command
+      shell: |
+        kubeadm token create --print-join-command > /root/token.txt
+
+    
+    
+- hosts: kubernetes-worker-nodes
+  become: yes
+  tasks:
+    - name : Copy token file into worker
+      copy:
+       src: /root/token.txt
+       dest: /root/token.txt
+
+    - name: join cluster
+      shell: |
+        cat /root/token.txt | bash
