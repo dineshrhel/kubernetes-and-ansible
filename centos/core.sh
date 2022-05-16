@@ -1,7 +1,8 @@
 #!/bin/bash
 
 ####Ansible playbook location######
-script_location=/etc/ansible/kubernetes-and-ansible/centos
+#script_location=/etc/ansible/kubernetes-and-ansible/centos
+script_location=$(find / -type d -name "centos" | grep -v boot)
 cp -p /etc/hosts /etc/hosts-`date "+%d-%b-%y--%H:%M"`
 
 rm -f /tmp/host_names.txt
