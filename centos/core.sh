@@ -9,7 +9,7 @@ rm -f /tmp/host_names.txt
 rm -f /tmp/dummy_host_entries1
 
 ##### To provide worker nodes host entries #####
-read -r -p "Please enter Worker Host names separated by space: " -a arr
+read -r -p "Please enter Worker Host IPs separated by space: " -a arr
 for host_name in "${arr[@]}"; do 
    echo -e "$host_name" >> /tmp/host_names.txt
 done
