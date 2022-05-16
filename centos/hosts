@@ -1,0 +1,7 @@
+[kubernetes-master-nodes]
+manager ansible_connection=local
+
+[kubernetes-worker-nodes]
+10.142.0.2
+10.128.15.197
+10.128.15.196
