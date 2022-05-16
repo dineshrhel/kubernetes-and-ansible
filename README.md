@@ -8,7 +8,10 @@ Pre-script at GCP:
 
 key: "startup-script-url"
 
-Value: "gs://startup_kubenertes/gcp_startup-script[1].sh"
+Value: "gs://pre-script-k8s/Pre-script_CentOS[1].sh"  ## this value is custom for each project, so dont use this same value on your
+                                                      ## project, need to create own by existing same prescript
+
+
 
 
 Pre-script GitHub Link:
