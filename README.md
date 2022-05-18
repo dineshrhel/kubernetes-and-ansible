@@ -1,6 +1,6 @@
 Credentials::
 ============
-Root Pwd:  "dineshmarch2o2Z.456"
+Root Pwd:  "K8s_Cluster2o2z"
 
 
 Pre-script at GCP:
